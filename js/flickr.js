@@ -9,16 +9,17 @@ $(document).ready(function(){
             format : "json"
         };
          function displayPhotos(data){
-            let photoHTML = "<ul>";
+            
+            let photoHTML = `<div class='row'>`;
             $.each(data.items,function (index, photos){
-               photoHTML += `<li class="grid-25 tablet-grid-50">`;
+               photoHTML += `<div class="col-3">`;
                photoHTML += `<a href="${photos.value}"></a>`
                photoHTML += `<img src=${photos.media.m}`
                photoHTML += `</a>`
-               photoHTML += `</li>`
+               photoHTML += `</div>`
 
             })
-            photoHTML += '</ul>';
+            photoHTML += '</div>';
             $('#photos').html(photoHTML);
          }
         $.getJSON(flickerAPI, flickerOpt, displayPhotos);
