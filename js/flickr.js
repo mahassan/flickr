@@ -12,7 +12,7 @@ $(document).ready(function(){
             
             let photoHTML = `<div class='row'>`;
             $.each(data.items,function (index, photos){
-               photoHTML += `<div class="col-3">`;
+               photoHTML += `<div class="col-sm-2 col-md-6 col-lg-3 mb-2">`;
                photoHTML += `<a href="${photos.value}"></a>`
                photoHTML += `<img src=${photos.media.m}`
                photoHTML += `</a>`
